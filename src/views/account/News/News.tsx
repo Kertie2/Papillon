@@ -91,16 +91,28 @@ const NewsScreen: Screen<"News"> = ({ route, navigation }) => {
     }
   }, [informations, account.personalization.MagicNews]);
 
-  const renderItem: ListRenderItem<NewsItem> = useCallback(({ item, index }) => (
-    <NewsListItem
-      key={index}
-      index={index}
-      message={item}
-      navigation={navigation}
-      parentMessages={sortedMessages}
-      isED={account.service == AccountService.EcoleDirecte}
-    />
-  ), [navigation, sortedMessages]);
+  const renderItem: ListRenderItem<NewsItem> = useCallback(({ item, index }) => {
+    const imageUri = item.attachments?.[0]?.url;
+  
+    return (
+      <View key={index} style={{ marginBottom: 16 }}>
+        {imageUri && (
+          <Image
+            source={{ uri: imageUri }}
+            style={styles.newsImage}
+            resizeMode="cover"
+          />
+        )}
+        <NewsListItem
+          index={index}
+          message={item}
+          navigation={navigation}
+          parentMessages={sortedMessages}
+          isED={account.service == AccountService.EcoleDirecte}
+        />
+      </View>
+    );
+  }, [navigation, sortedMessages]);
 
   const NoNewsMessage = () => (
     <View
@@ -185,6 +197,12 @@ const NewsScreen: Screen<"News"> = ({ route, navigation }) => {
 };
 
 const styles = StyleSheet.create({
+  newsImage: {
+    width: "100%",
+    height: 200,
+    borderRadius: 8,
+    marginBottom: 8,
+  },
   scrollViewContent: {
     padding: 16,
     paddingTop: 0,
