@@ -27,7 +27,7 @@ const NewsListItem: React.FC<NewsListItemProps> = ({ index, message, navigation,
     }
     const extension = attachment.name.split(".").pop()?.split("?")[0].toLowerCase();
     if (!extension) {
-      return
+      return;
     }
     console.log(extension);
     return ["jpg", "jpeg", "png"].includes(extension);
