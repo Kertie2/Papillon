@@ -21,7 +21,7 @@ interface NewsListItemProps {
 
 const NewsListItem: React.FC<NewsListItemProps> = ({ index, message, navigation, parentMessages, isED }) => {
   const theme = useTheme();
-    const newsImage = message.attachments.find((attachment) => {
+  const newsImage = message.attachments.find((attachment) => {
     if (attachment.type !== AttachmentType.File) {
       return
     }
