@@ -91,18 +91,8 @@ const NewsScreen: Screen<"News"> = ({ route, navigation }) => {
     }
   }, [informations, account.personalization.MagicNews]);
 
-  const renderItem: ListRenderItem<NewsItem> = useCallback(({ item, index }) => {
-    const imageUri = item.attachments?.[0]?.url;
-  
+    const renderItem: ListRenderItem<NewsItem> = useCallback(({ item, index }) => {
     return (
-      <View key={index} style={{ marginBottom: 16 }}>
-        {imageUri && (
-          <Image
-            source={{ uri: imageUri }}
-            style={styles.newsImage}
-            resizeMode="cover"
-          />
-        )}
         <NewsListItem
           index={index}
           message={item}
@@ -110,7 +100,6 @@ const NewsScreen: Screen<"News"> = ({ route, navigation }) => {
           parentMessages={sortedMessages}
           isED={account.service == AccountService.EcoleDirecte}
         />
-      </View>
     );
   }, [navigation, sortedMessages]);
 
