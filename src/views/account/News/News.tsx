@@ -91,7 +91,7 @@ const NewsScreen: Screen<"News"> = ({ route, navigation }) => {
     }
   }, [informations, account.personalization.MagicNews]);
 
-    const renderItem: ListRenderItem<NewsItem> = useCallback(({ item, index }) => {
+  const renderItem: ListRenderItem<NewsItem> = useCallback(({ item, index }) => {
     return (
         <NewsListItem
           index={index}
