@@ -23,7 +23,7 @@ const NewsListItem: React.FC<NewsListItemProps> = ({ index, message, navigation,
   const theme = useTheme();
   const newsImage = message.attachments.find((attachment) => {
     if (attachment.type !== AttachmentType.File) {
-      return
+      return;
     }
     const extension = attachment.name.split(".").pop()?.split("?")[0].toLowerCase();
     if (!extension) {
