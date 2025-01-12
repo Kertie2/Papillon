@@ -93,13 +93,13 @@ const NewsScreen: Screen<"News"> = ({ route, navigation }) => {
 
   const renderItem: ListRenderItem<NewsItem> = useCallback(({ item, index }) => {
     return (
-        <NewsListItem
-          index={index}
-          message={item}
-          navigation={navigation}
-          parentMessages={sortedMessages}
-          isED={account.service == AccountService.EcoleDirecte}
-        />
+      <NewsListItem
+        index={index}
+        message={item}
+        navigation={navigation}
+        parentMessages={sortedMessages}
+        isED={account.service == AccountService.EcoleDirecte}
+      />
     );
   }, [navigation, sortedMessages]);
 
