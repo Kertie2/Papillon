@@ -30,7 +30,7 @@ const NewsListItem: React.FC<NewsListItemProps> = ({ index, message, navigation,
       return;
     }
     return ["jpg", "jpeg", "png"].includes(extension);
-  })
+  });
   return (
     <NativeItem
       onPress={() => {
