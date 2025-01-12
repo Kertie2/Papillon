@@ -29,7 +29,6 @@ const NewsListItem: React.FC<NewsListItemProps> = ({ index, message, navigation,
     if (!extension) {
       return;
     }
-    console.log(extension);
     return ["jpg", "jpeg", "png"].includes(extension);
   })
   return (
