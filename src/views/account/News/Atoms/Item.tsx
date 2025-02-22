@@ -114,7 +114,8 @@ const styles = StyleSheet.create({
   newsImage: {
     width: "100%",
     height: 200,
-    borderRadius: 8,
+    borderTopRightRadius: 8,
+    borderTopLeftRadius: 8,
     marginBottom: 8,
   },
 });
