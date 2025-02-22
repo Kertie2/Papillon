@@ -186,12 +186,6 @@ const NewsScreen: Screen<"News"> = ({ route, navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  newsImage: {
-    width: "100%",
-    height: 200,
-    borderRadius: 8,
-    marginBottom: 8,
-  },
   scrollViewContent: {
     padding: 16,
     paddingTop: 0,
